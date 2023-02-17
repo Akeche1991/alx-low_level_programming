@@ -5,7 +5,6 @@
 #include <stdio.h>
 
 
-
 /**
  * main - Prints if number is positivr, zero or negative
  * Return: Always (success)
@@ -15,7 +14,6 @@
 int main(void)
 
 {
-
         int n;
 
         srand(time(0));
