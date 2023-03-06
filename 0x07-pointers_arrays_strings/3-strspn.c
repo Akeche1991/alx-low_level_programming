@@ -1,30 +1,31 @@
-#include "main.h"
-
 /**
- * _strspn - Entry point
- * @s: input
- * @accept: input
- * Return: Always 0 (Success)
+ * _strspn - finds length of prefix substring
+ *
+ * @s: string to check
+ * @accept: substring of chars
+ *
+ * Return: n bytes in intial segment of s which
+ * consist only of bytes from accept
  */
-
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, n, value, check;
+	int i;
+	int consistC = 0;
+	int prevC;
 
-	value = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		check = 0;
-
-		for (n = 0; accept[n] != '\0'; n++)
+		i = 0;
+		prevC = consistC;
+		while (*(accept + i) != '\0')
 		{
-			if (accept[n] == s[i])
-			{
-				value++;
-				check = 1;
-			}
+			if (*(accept + i) == *s)
+				consistC++;
+			i++;
 		}
-		return (check);
+		if (prevC == consistC) /* didn't equal a char from accept */
+			break;
+		s++;
 	}
+	return (consistC);
 }
