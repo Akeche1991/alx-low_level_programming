@@ -7,6 +7,7 @@
  * @c: input
  * Return: Always 0 (Success)
  */
+
 char *_strpbrk(char *s, char *accept)
 {
 	int i, n;
@@ -19,5 +20,6 @@ char *_strpbrk(char *s, char *accept)
 				return (s +i);
 		}
 	}
+
 	return (NULL);
 }
