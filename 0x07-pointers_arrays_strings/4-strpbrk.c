@@ -1,25 +1,25 @@
-#include <stdio.h>
-#include "main.h"
-
 /**
- * _strpbrk - Entry point
- * @s: input
- * @c: input
- * Return: Always 0 (Success)
+ * _strpbrk - searches string for set of bytes
+ *
+ * @s: string to check
+ * @accept: substring of chars
+ *
+ * Return: pointer to first occurance
  */
-
 char *_strpbrk(char *s, char *accept)
 {
-	int i, n;
+	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		for (n = 0; accept[n] != '\0'; n++)
+		i = 0;
+		while (*(accept + i) != '\0')
 		{
-			if (s[i] == accept[n])
-				return (s +i);
+			if (*(accept + i) == *s)
+				return (s);
+			i++;
 		}
+		s++;
 	}
-
-	return (NULL);
+	return (0); /* didn't find an occurance */
 }
