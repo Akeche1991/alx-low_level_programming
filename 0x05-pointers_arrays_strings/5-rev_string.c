@@ -1,24 +1,22 @@
-#include "main.h"
-
 /**
- * rev_string - Reverses a string
- * @s: The string to be modified
- * Return: void
+ * rev_string - reverses given string
+ *
+ * @s: string to reverse
+ *
+ * Return: always void
  */
-
 void rev_string(char *s)
-
 {
-	int len = 0, index = 0;
-	char tmp;
+	char *end = s;
+	char store;
 
-	while (s[index++])
-	len++;
-
-	for (index = len - 1; index >= len / 2; index--)
+	while (*end)
+		end++; /* set pos of end pointer to point to last element */
+	end = end - 1; /* set end pos to end -1 b/c end is really '\0' */
+	while (s < end) /* stop once we get to last address */
 	{
-	tmp = s[index];
-	s[index] = s[len - index - 1];
-	s[len - index - 1] = tmp;
+		store = *s; /* set store ch to s[currentPos] */
+		*s++ = *end; /* set position of s = pos end, and increment s */
+		*end-- = store; /* set pos of end to stored char and increment */
 	}
 }
