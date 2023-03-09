@@ -1,14 +1,13 @@
-#include "main.h"
 /**
- * _supper - function that checks for uppercase character
- * @c: input
- * Return: 1 if c is uppercase, 0 otherwise
+ * _isdigit - checks if int is digit or not
+ *
+ * @c: int c, represents a char
+ *
+ * Return: 1 if c is digit, 0 otherwise
  */
 int _isdigit(int c)
 {
-
-if ((c >= 48) && (c <= 57))
-return (1);
-else
-return (0);
+	if (c >= 48 && c <= 57) /* ascii 0..9 values */
+		return (1);
+	return (0);
 }
