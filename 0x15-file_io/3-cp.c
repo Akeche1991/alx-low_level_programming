@@ -57,13 +57,13 @@ void copy_file(const char *src, const char *dest)
 
 	if (close(ofn) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fn %d\n", ofn);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofn);
 		exit(100);
 	}
 
 	if (close(tfn) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fn %d\n", tfn);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tfn);
 		exit(100);
 	}
 }
