@@ -64,6 +64,6 @@ void copy_file(const char *src, const char *dest)
 	if (close(tfn) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fn %d\n", tfn);
-		exit(100);
+		return (100);
 	}
 }
